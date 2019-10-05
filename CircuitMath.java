@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class main {
+public class CircuitMath {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = Integer.parseInt(scanner.nextLine());

@@ -1,6 +1,7 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class Main {
+public class Gerrymandering {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -45,7 +46,8 @@ public class Main {
         for (int i = 0; i < lineOutputs.length; i += 1) {
             System.out.println(lineOutputs[i]);
         }
+        DecimalFormat numberFormat = new DecimalFormat("#.0000000000");
         double calc = (double)(Math.abs((double)aTotalWaste - (double)bTotalWaste)) / (double)totalVotes;
-        System.out.println(calc);
+        System.out.println(numberFormat.format(calc));
     }
 }
