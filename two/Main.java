@@ -34,8 +34,8 @@ public class Main {
                 aWaste = aPer;
                 bWaste = bPer - temp;
             }
-            System.out.println(winner + " " + aPer + " " + bPer);
-            lineOutputs[i] = winner + " " + aPer + " " + bPer;
+            System.out.println(winner + " " + aWaste + " " + bWaste);
+            lineOutputs[i] = winner + " " + aWaste + " " + bWaste;
         }
         System.out.println("\n");
         for (int i = 0; i < lineOutputs.length; i += 1) {
