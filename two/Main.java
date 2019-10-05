@@ -15,13 +15,15 @@ public class Main {
             output[Integer.parseInt(line[0])-1][1] += Integer.parseInt(line[2]);
         }
 
-        String[] lineOutputs = new String[output.length+1];
+        String[] lineOutputs = new String[output.length];
 
+        int totalVotes = 0;
+        int aTotalWaste = 0;
+        int bTotalWaste = 0;
         for (int i = 0; i < output.length; i += 1) {
             int aPer = output[i][0];
             int bPer = output[i][1];
             int temp = ((aPer + bPer) / 2) + 1;
-            System.out.println(temp);
             String winner = "";
             int aWaste = 0;
             int bWaste = 0;
@@ -34,12 +36,16 @@ public class Main {
                 aWaste = aPer;
                 bWaste = bPer - temp;
             }
-            System.out.println(winner + " " + aWaste + " " + bWaste);
+            totalVotes += aPer + bPer;
+            aTotalWaste += aWaste;
+            bTotalWaste += bWaste;
             lineOutputs[i] = winner + " " + aWaste + " " + bWaste;
         }
         System.out.println("\n");
         for (int i = 0; i < lineOutputs.length; i += 1) {
             System.out.println(lineOutputs[i]);
         }
+        double calc = (double)(Math.abs((double)aTotalWaste - (double)bTotalWaste)) / (double)totalVotes;
+        System.out.println(calc);
     }
 }
